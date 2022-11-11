@@ -1,7 +1,7 @@
 <template>
   <div class="hangman-word">
     <div class="key"
-         :class="{'wrong': reveal && guessedLetters.includes(character)}"
+         :class="{'wrong': reveal && !guessedLetters.includes(character)}"
          v-for="(character, index) in word"
          :key="index">
       <span :class="{'hide': !guessedLetters.includes(character) && !reveal}">
