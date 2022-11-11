@@ -25,7 +25,7 @@ const gameState = ref(HangmanGameStateEnum.playing) as Ref<HangmanGameStateEnum>
 const guessedLetters = ref([]) as Ref<string[]>;
 const wrongLettersCount = ref(0) as Ref<number>;
 const addGuessedLetter = (letter: string) => {
-  if (guessedLetters.value.includes(letter)) {
+  if (guessedLetters.value.includes(letter) || gameState.value !== HangmanGameStateEnum.playing) {
     return;
   }
   const newGuessedLetters = [
